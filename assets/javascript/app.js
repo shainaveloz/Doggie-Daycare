@@ -1,5 +1,5 @@
 // Link to Firebase
-var doggieData = new Firebase("ADD YOUR APP URL");
+var doggieData = new Firebase("https://doggie-daycare.firebaseio.com/");
 
 
 //Getting a snapshot of the database before
