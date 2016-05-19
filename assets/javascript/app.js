@@ -1,9 +1,21 @@
-// Link to Firebase
-var doggieData = new Firebase("https://doggie-daycare.firebaseio.com/");
+
+  var config = {
+    apiKey: "AIzaSyC_q6gMjWo-6vJ2L1e0ckEBSRyiB_GVTxY",
+    authDomain: "doggie-daycare.firebaseapp.com",
+    databaseURL: "https://doggie-daycare.firebaseio.com",
+    storageBucket: "gs://doggie-daycare.appspot.com/",
+  };
+  firebase.initializeApp(config);
 
 
-// user creation function
-doggieData.createUser({
+var storage = firebase.storage();
+
+
+var storageRef = storage.ref();
+
+
+//Getting a snapshot of the database before
+storageRef.createUser({
   email: "bobtony@gmail.com",
   password: "correcthorsebatterystaple"
 }, function(error, userData) {
@@ -23,7 +35,7 @@ doggieData.createUser({
   }
 });
 
-doggieData.on("value", function(snapshot) {
+storageRef.on("value", function(snapshot) {
 
 
 
