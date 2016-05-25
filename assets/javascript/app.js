@@ -112,10 +112,10 @@ var storageRef = storage.ref();
 //var meetKey = 4a1e561d7323254a5232128494a5934;
 
 //outhkeys
-https://secure.meetup.com/oauth2/authorize
-    ?client_id=koc9lto3p0h64enr7hjm59hr09
-    &response_type= goh50dgprulpk2549ph8pvrnps
-    &redirect_uri= index.html
+<"https://secure.meetup.com/oauth2/authorize">
+    <?client_id=koc9lto3p0h64enr7hjm59hr09>
+    <&response_type= goh50dgprulpk2549ph8pvrnps>
+    <&redirect_uri= index.html>
 
 curl -i \
   -X OPTIONS \
