@@ -1,52 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
 	<meta charset="UTF-8">
-	<title>Doggie Daycare</title>
+	<title>Doggie Day Care</title>
+
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<!-- Linking to jQuery -->
-	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 
-	<!-- Firebase Reference -->
- <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
 </head>
 <body>
 
+<div id="wrapper">
 
-<div class="row anotherclass"></div>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Doggie Day Care
+                    </a>
+                </li>
+                <li>
+                    <a href="#">My Profile</a>
+                </li>
+                <li>
+                    <a href="#">My Dog</a>
+                </li>
+                <li>
+                    <a href="#">Find a Day Care</a>
+                </li>
+                <li>
+                    <a href="#">Meetups</a>
+                </li>
+                <li>
+                    <a href="#">Dog Giphs</a>
+                </li>
+                <li>
+                    <a href="#">Dogs of Pinterest</a>
+                </li>
+                <li>
+                    <a href="#">Help a dog</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>               
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
 
-<!-- Sign up form Begin -->
-
-<div class="panel panel-primary">
-	<div class="panel-heading">
-		<h3 class="panel-title"><strong>Sign-up</strong></h3>
-	</div>
-	<div class="panel-body">
-
-	<div id="signUpForm">
-	<form>
-		<div class="form-group">
-			<label for="">Username</label>
-				<input type="text" name="user" class="form-control" id="userNameInput">
-		</div>
-
-		<div class="form-group">
-			<label for="">Password</label>
-				<input type="password" name="password" class="form-control" id="userPassword">
-		</div>
-
-		<button type="submit" class="btn btn-primary" id="signUpUser">Submit</button>
-	</form>
-	</div>
-	</div>
-</div>
-
-<!-- Sign up form end -->
-
-
-<!-- Link to the javascript loading the page -->
-<script src="assets/javascript/app.js"></script>
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
+                    <div class="col-lg-12">
+                        <h1>Welcome to Doggie Day Care</h1>
+                        <hr>
+                        <p>Find dog day cares close to you and doggie events!</p>
+                        <p>If you are a real dog lover, sign up to be a dog care taker and make some extra money!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+	<script src="assets/javascript/layout.js"></script>
+	<!-- jQuery Minified -->
+	<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+		<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>
 </html>
 
