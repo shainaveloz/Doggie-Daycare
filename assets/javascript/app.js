@@ -110,9 +110,33 @@ var storageRef = storage.ref();
 //Meetup API
 
 //var meetKey = 4a1e561d7323254a5232128494a5934;
-var queryURL = "https://api.meetup.com/find/groups?photo-host=public&location=Orlando%2C+FL&page=20&text=pets&sig_id=205737583&category=26&sig=7b2b0507a806d0cde91e74f6c7c25969bf44625c";
 
-$.ajax({url: queryURL, method: 'GET'})
+//outhkeys
+https://secure.meetup.com/oauth2/authorize
+    ?client_id=koc9lto3p0h64enr7hjm59hr09
+    &response_type= goh50dgprulpk2549ph8pvrnps
+    &redirect_uri= index.html
+
+curl -i \
+  -X OPTIONS \
+  -H 'Origin: http://consumerhost.com' \
+  'https://api.meetup.com/2/member/self?access_token=TOKEN'
+HTTP/1.1 200 OK
+Access-Control-Expose-Headers: X-Meetup-server, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimt-Reset
+Access-Control-Allow-Origin: http://consumerhost.com
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, OPTIONS
+Access-Control-Max-Age: 86400
+
+oauthsecret = goh50dgprulpk2549ph8pvrnps;
+
+oauthkey = koc9lto3p0h64enr7hjm59hr09;
+
+
+
+var queryURL = "https://api.meetup.com/find/groups?photo-host=public&location=Orlando%2C+FL&page=20&text=pets&sig_id=205737583&category=26&sig=7b2b0507a806d0cde91e74f6c7c25969bf44625c?callback=?";
+
+$.ajax({url: queryURL, method: 'GET', dataType: "jsonp"})
 		.done(function(response) {
 		    var meetUrl = response;
             var meetBox = $("<div>");
@@ -120,66 +144,12 @@ $.ajax({url: queryURL, method: 'GET'})
             meetBox.attr('alt', 'meet div');
             $('#list').prepend(meetBox);
 		})
+
+
 //			var meetUrl = response;
 //			var meetBox = $("<div>");
 //			meetBox.attr('src', meetUrl);
 //            meetBox.attr('alt', 'meet div');
 //              $('#list').prepend(meetBox);
 
-
-//    $.ajax({url: queryURL, method: 'GET'})
-//     .done(function(response) {
-//         var results = response.data;
-//
-//         for(var i=0; i < results.length; i++){
-//             var animalDiv = $('<div class="animal-item">')
-//
-//             var rating = results[i].rating;
-//
-//             var p = $('<p>').text( "Rating: " + rating);
-//
-//             var animated = results[i].images.fixed_height.url;
-//             var still = results[i].images.fixed_height_still.url;
-//
-//             var animalImage = $('<img>');
-//             animalImage.attr('src', still);
-//             animalImage.attr('data-still', still);
-//             animalImage.attr('data-animate', animated);
-//             animalImage.attr('data-state', 'still')
-//             animalImage.addClass('animalImage');
-//
-//             animalDiv.append(p)
-//             animalDiv.append(animalImage)
-//
-//             $('#animals').append(animalDiv);
-//         }
-// storageRef.createUser({
-//   email: "bobtony@gmail.com",
-//   password: "correcthorsebatterystaple"
-// }, function(error, userData) {
-//   if (error) {
-//     switch (error.code) {
-//       case "EMAIL_TAKEN":
-//         console.log("The new user account cannot be created because the email is already in use.");
-//         break;
-//       case "INVALID_EMAIL":
-//         console.log("The specified email is not a valid email.");
-//         break;
-//       default:
-//         console.log("Error creating user:", error);
-//     }
-//   } else {
-//     console.log("Successfully created user account with uid:", userData.uid);
-//   }
-// });
-
-// storageRef.on("value", function(snapshot) {
-
-
-
-// }, function (errorObject) {
-
- //   	console.log("The read failed: " + errorObject.code);
-
- // });
 
