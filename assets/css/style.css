@@ -4,10 +4,14 @@ body {
   background: -o-linear-gradient(-90deg, #2ae6f4, #1c75bc); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(-90deg, #2ae6f4, #1c75bc); /* For Firefox 3.6 to 15 */
   background: linear-gradient(-90deg, #2ae6f4, #1c75bc); /* Standard syntax */
+
 }
 
 
-
+#map{
+    height: 1000px;
+    
+}
 
 #wrapper {
     padding-left: 0;
