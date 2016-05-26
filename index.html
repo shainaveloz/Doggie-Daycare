@@ -1,21 +1,14 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Doggie Day Care</title>
+    <meta charset="UTF-8">
+    <title>Doggie Day Care</title>
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<<<<<<< HEAD
-
-</head>
-<body>
-
-=======
->>>>>>> e4092c0e6d288b19bcd92d546f17500c27cc1bdf
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
 </head>
@@ -23,27 +16,6 @@
 
 <div id="wrapper">
 
-<<<<<<< HEAD
-<!--Meetup ApI-->
-<div class="container">
-	<div class="col-md-6">
-		<br>
-			<div class="panel panel-primary">
-				<div class="panel-heading"></div>
-			</div>
-			<div id="list"></div>
-	</div>
-</div>
-
-<!-- Linking to jQuery -->
-<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-
-<!-- Firebase Reference -->
-<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-<!-- Link to the javascript loading the page -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-<script src="assets/javascript/app.js"></script>
-=======
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
@@ -59,7 +31,7 @@
                     <a href="#">My Dog</a>
                 </li>
                 <li>
-                    <a href="#">Find a Day Care</a>
+                    <button id="mapButton">Find a Day Care</button>
                 </li>
                 <li>
                     <a href="#">Meetups</a>
@@ -83,23 +55,32 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
+            <div id="displaycontent">
                 <div class="row">
                     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
-                    <div class="col-lg-12">
+                    <div class="col-lg-12" id="#welcome">
                         <h1>Welcome to Doggie Day Care</h1>
                         <hr>
                         <p>Find dog day cares close to you and doggie events!</p>
                         <p>If you are a real dog lover, sign up to be a dog care taker and make some extra money!</p>
                     </div>
+
+                    <div id="map">
+                    </div>
+
                 </div>
             </div>
+            </div>
         </div>
-	<script src="assets/javascript/layout.js"></script>
-	<!-- jQuery Minified -->
-	<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-		<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
->>>>>>> e4092c0e6d288b19bcd92d546f17500c27cc1bdf
+            <!-- jQuery Minified -->
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script src="assets/javascript/layout.js"></script>
+    <script src="assets/javascript/app.js"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo7gnGM8y7QNTCLMPwgtSO-5azcsc59a4&libraries=places&callback=initMap" async defer></script>
 </body>
 </html>
 
