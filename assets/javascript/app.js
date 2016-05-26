@@ -1,17 +1,73 @@
+    var map;
+    var service;
+    var infowindow;
 
+    function initMap() {
+      var pyrmont = new google.maps.LatLng(28.5395456, -81.476595);
+
+      map = new google.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 15
+        });
+
+      infowindow = new google.maps.InfoWindow();
+      var request = {
+        location: pyrmont,
+        radius: '500',
+        query: 'dog_day_care'
+      };
+
+      service = new google.maps.places.PlacesService(map);
+      service.textSearch(request, callback);
+    }
+
+    function callback(results, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          var place = results[i];
+          createMarker(results[i]);
+        }
+      }
+    }
+
+    function createMarker(place) {
+      console.log(place);
+      var placeLoc = place.geometry.location;
+      var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+      });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          console.log(place);
+          var reviews;
+          if(place.rating == undefined) {
+            reviews = "No reviews";
+          } else {
+            reviews = place.rating + " out of 5.";
+          }
+
+          infowindow.setContent(place.name + "<br>" + place.formatted_address
++ "<br>" + reviews);
+          infowindow.open(map, this);
+        });
+      }
+
+$( document ).ready(function() {
+  
   var config = {
     apiKey: "AIzaSyC_q6gMjWo-6vJ2L1e0ckEBSRyiB_GVTxY",
     authDomain: "doggie-daycare.firebaseapp.com",
     databaseURL: "https://doggie-daycare.firebaseio.com",
     storageBucket: "gs://doggie-daycare.appspot.com/",
   };
-  firebase.initializeApp(config);
+  //firebase.initializeApp(config);
 
 
-var storage = firebase.storage();
+//var storage = firebase.storage();
 
 
-var storageRef = storage.ref();
+//var storageRef = storage.ref();
 
 //Getting a snapshot of the database before
 //firebase.auth().onAuthStateChanged(function(user) {
@@ -112,38 +168,38 @@ var storageRef = storage.ref();
 //var meetKey = 4a1e561d7323254a5232128494a5934;
 
 //outhkeys
-https://secure.meetup.com/oauth2/authorize
-    ?client_id=koc9lto3p0h64enr7hjm59hr09
-    &response_type= goh50dgprulpk2549ph8pvrnps
-    &redirect_uri= index.html
+// https://secure.meetup.com/oauth2/authorize
+//     ?client_id=koc9lto3p0h64enr7hjm59hr09
+//     &response_type= goh50dgprulpk2549ph8pvrnps
+//     &redirect_uri= index.html
 
-curl -i \
-  -X OPTIONS \
-  -H 'Origin: http://consumerhost.com' \
-  'https://api.meetup.com/2/member/self?access_token=TOKEN'
-HTTP/1.1 200 OK
-Access-Control-Expose-Headers: X-Meetup-server, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimt-Reset
-Access-Control-Allow-Origin: http://consumerhost.com
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Methods: GET, OPTIONS
-Access-Control-Max-Age: 86400
+// curl -i \
+//   -X OPTIONS \
+//   -H 'Origin: http://consumerhost.com' \
+//   'https://api.meetup.com/2/member/self?access_token=TOKEN'
+// HTTP/1.1 200 OK
+// Access-Control-Expose-Headers: X-Meetup-server, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimt-Reset
+// Access-Control-Allow-Origin: http://consumerhost.com
+// Access-Control-Allow-Credentials: true
+// Access-Control-Allow-Methods: GET, OPTIONS
+// Access-Control-Max-Age: 86400
 
-oauthsecret = goh50dgprulpk2549ph8pvrnps;
+// oauthsecret = goh50dgprulpk2549ph8pvrnps;
 
-oauthkey = koc9lto3p0h64enr7hjm59hr09;
+// oauthkey = koc9lto3p0h64enr7hjm59hr09;
 
 
 
-var queryURL = "https://api.meetup.com/find/groups?photo-host=public&location=Orlando%2C+FL&page=20&text=pets&sig_id=205737583&category=26&sig=7b2b0507a806d0cde91e74f6c7c25969bf44625c?callback=?";
+// var queryURL = "https://api.meetup.com/find/groups?photo-host=public&location=Orlando%2C+FL&page=20&text=pets&sig_id=205737583&category=26&sig=7b2b0507a806d0cde91e74f6c7c25969bf44625c?callback=?";
 
-$.ajax({url: queryURL, method: 'GET', dataType: "jsonp"})
-		.done(function(response) {
-		    var meetUrl = response;
-            var meetBox = $("<div>");
-            meetBox.attr('src', meetUrl);
-            meetBox.attr('alt', 'meet div');
-            $('#list').prepend(meetBox);
-		})
+// $.ajax({url: queryURL, method: 'GET', dataType: "jsonp"})
+// 		.done(function(response) {
+// 		    var meetUrl = response;
+//             var meetBox = $("<div>");
+//             meetBox.attr('src', meetUrl);
+//             meetBox.attr('alt', 'meet div');
+//             $('#list').prepend(meetBox);
+// 		})
 
 
 //			var meetUrl = response;
@@ -153,3 +209,26 @@ $.ajax({url: queryURL, method: 'GET', dataType: "jsonp"})
 //              $('#list').prepend(meetBox);
 
 
+
+// _______________
+// _______________
+// GOOGLE MAPS BEGIN
+// _______________
+// _______________
+
+
+$("#mapButton").on('click', function() {
+  alert("test");
+  initMap();
+})
+
+// _______________
+// _______________
+// GOOGLE MAPS END
+// _______________
+// _______________
+
+
+
+
+})

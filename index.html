@@ -31,7 +31,7 @@
                     <a href="#">My Dog</a>
                 </li>
                 <li>
-                    <a href="#">Find a Day Care</a>
+                    <button id="mapButton">Find a Day Care</button>
                 </li>
                 <li>
                     <a href="#">Meetups</a>
@@ -55,22 +55,32 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
+            <div id="displaycontent">
                 <div class="row">
                     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
-                    <div class="col-lg-12">
+                    <div class="col-lg-12" id="#welcome">
                         <h1>Welcome to Doggie Day Care</h1>
                         <hr>
                         <p>Find dog day cares close to you and doggie events!</p>
                         <p>If you are a real dog lover, sign up to be a dog care taker and make some extra money!</p>
                     </div>
+
+                    <div id="map">
+                    </div>
+
                 </div>
             </div>
+            </div>
         </div>
+            <!-- jQuery Minified -->
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 	<script src="assets/javascript/layout.js"></script>
-	<!-- jQuery Minified -->
-	<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script src="assets/javascript/app.js"></script>
+
 		<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo7gnGM8y7QNTCLMPwgtSO-5azcsc59a4&libraries=places&callback=initMap" async defer></script>
 </body>
 </html>
 
