@@ -6,13 +6,11 @@
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<<<<<<< HEAD
+
 
 </head>
 <body>
 
-=======
->>>>>>> e4092c0e6d288b19bcd92d546f17500c27cc1bdf
 
 
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -23,17 +21,131 @@
 
 <div id="wrapper">
 
-<<<<<<< HEAD
+
 <!--Meetup ApI-->
-<div class="container">
-	<div class="col-md-6">
-		<br>
-			<div class="panel panel-primary">
-				<div class="panel-heading"></div>
-			</div>
-			<div id="list"></div>
-	</div>
-</div>
+
+    <!-- Row for Searching New York Times -->
+    <div class="row">
+        <div class="col-sm-12">
+            <br>
+            <!-- First panel is for handling the search parameters -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong><i class="fa  fa-list-alt"></i> Find local Doggie Meetups! </strong></h3>
+                </div>
+                <div class="panel-body">
+
+                    <!-- Here we create an HTML Form for handling the inputs-->
+                    <form role="form">
+
+                        <!-- Here we create the text box for capturing the search term-->
+                        <div class="form-group">
+                            <label for="search">Search City:</label>
+                            <input type="text" class="form-control" id="searchCity">
+                        </div>
+
+                        <!-- Here we capture the number of records that the user wants to retrieve  -->
+                        <div class="form-group">
+                            <label for="pwd">Number of Meetups to Retrieve:</label>
+                            <select class="form-control" id="numRecordsSelect">
+                                <option value=1>1</option>
+                                <!-- Setting the option for 5 as default -->
+                                <option value=5 selected>5</option>
+                                <option value=10>10</option>
+                            </select>
+                        </div>
+
+                        <!-- Here we have our final submit button -->
+                        <button type="submit" class="btn btn-default" id="searchMeetups"><i class="fa fa-search"></i> Search</button>
+                        <button type="button" class="btn btn-default" id="clearAll"><i class="fa fa-trash"></i> Clear Results</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This row will handle all of the retrieved articles -->
+    <div class="row">
+        <div class="col-sm-12">
+            <br>
+
+            <!-- This panel will initially be made up of a panel and wells for each of the articles retrieved -->
+            <div class="panel panel-primary">
+
+                <!-- Panel Heading for the retrieved articles box -->
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong><i class="fa fa-table"></i>   Top Resutls </strong></h3>
+                </div>
+
+                <!-- This main panel will hold each of the resulting articles -->
+                <div class="panel-body" id="list">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="container">-->
+	<!--<div class="col-md-6">-->
+        <!--<form>-->
+            <!--<h3>Find local Doggie Meetups!</h3>-->
+            <!--<input type="text" id="searchMeetups">-->
+            <!--<input id="submit" type="submit" value="Search">-->
+        <!--</form>-->
+        <!--<div id="list"></div>-->
+	<!--</div>-->
+<!--</div>-->
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                    Doggie Day Care
+                </a>
+            </li>
+            <li>
+                <a href="#">My Profile</a>
+            </li>
+            <li>
+                <a href="#">My Dog</a>
+            </li>
+            <li>
+                <a href="#">Find a Day Care</a>
+            </li>
+            <li>
+                <a href="#">Meetups</a>
+            </li>
+            <li>
+                <a href="#">Dog Giphs</a>
+            </li>
+            <li>
+                <a href="#">Dogs of Pinterest</a>
+            </li>
+            <li>
+                <a href="#">Help a dog</a>
+            </li>
+            <li>
+                <a href="#">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
+                <div class="col-lg-12">
+                    <h1>Welcome to Doggie Day Care</h1>
+                    <hr>
+                    <p>Find dog day cares close to you and doggie events!</p>
+                    <p>If you are a real dog lover, sign up to be a dog care taker and make some extra money!</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- Linking to jQuery -->
 <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
@@ -41,65 +153,7 @@
 <!-- Firebase Reference -->
 <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 <!-- Link to the javascript loading the page -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-<script src="assets/javascript/app.js"></script>
-=======
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Doggie Day Care
-                    </a>
-                </li>
-                <li>
-                    <a href="#">My Profile</a>
-                </li>
-                <li>
-                    <a href="#">My Dog</a>
-                </li>
-                <li>
-                    <a href="#">Find a Day Care</a>
-                </li>
-                <li>
-                    <a href="#">Meetups</a>
-                </li>
-                <li>
-                    <a href="#">Dog Giphs</a>
-                </li>
-                <li>
-                    <a href="#">Dogs of Pinterest</a>
-                </li>
-                <li>
-                    <a href="#">Help a dog</a>
-                </li>
-                <li>
-                    <a href="#">Contact Us</a>
-                </li>               
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
-                    <div class="col-lg-12">
-                        <h1>Welcome to Doggie Day Care</h1>
-                        <hr>
-                        <p>Find dog day cares close to you and doggie events!</p>
-                        <p>If you are a real dog lover, sign up to be a dog care taker and make some extra money!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-	<script src="assets/javascript/layout.js"></script>
-	<!-- jQuery Minified -->
-	<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-		<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
->>>>>>> e4092c0e6d288b19bcd92d546f17500c27cc1bdf
+<script src="assets/javascript/meetup.js"></script>
 </body>
 </html>
 

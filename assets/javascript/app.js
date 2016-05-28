@@ -13,6 +13,43 @@ var storage = firebase.storage();
 
 var storageRef = storage.ref();
 
+$('#loginButton').on('click', function(){
+
+  var username = $('#username');
+  var pw = $('#password');
+  if (username == names && password == pwds) {
+      storageRef.set({
+        names: username,
+        pwds: password
+      })
+    // loads to backend user page
+    window.location.replace("http://index.html");
+
+  } else if(username !== names && password !== pwds) {
+    storageRef.push({
+        names: username,
+        pwds: password
+    })
+  }
+  
+});
+
+
+// storageRef.on('value', function(snapshot){
+
+//   // Getting a snapshot of the database before
+//   firebase.auth().onAuthStateChanged(function(user) {
+//    if (user) {
+//       // User is signed in.
+//    } else {
+//       // No user is signed in.
+//    }
+
+//     var user = firebase.auth().currentUser;
+//   })
+
+// })
+
 //Getting a snapshot of the database before
 //firebase.auth().onAuthStateChanged(function(user) {
 //  if (user) {
@@ -49,12 +86,6 @@ var storageRef = storage.ref();
 //    console.log("  Photo URL: "+profile.photoURL);
 //  });
 //}
-//
-//storageRef.set({
-//    user : user
-//    });
-
-
 //user.updateProfile({
 //  displayName: "Jane Q. User",
 //  photoURL: "https://example.com/jane-q-user/profile.jpg"
@@ -87,8 +118,8 @@ var storageRef = storage.ref();
 //}, function(error) {
   // An error happened.
 //});
-
-
+//
+//
 //user.delete().then(function() {
   // User deleted.
 //}, function(error) {
@@ -107,49 +138,28 @@ var storageRef = storage.ref();
 
 
 
-//Meetup API
+//
+//storageRef.set({
+//    user : user
+//    });
 
-//var meetKey = 4a1e561d7323254a5232128494a5934;
 
-//outhkeys
-<"https://secure.meetup.com/oauth2/authorize">
-    <?client_id=koc9lto3p0h64enr7hjm59hr09>
-    <&response_type= goh50dgprulpk2549ph8pvrnps>
-    <&redirect_uri= index.html>
+//
+//var updateProfile = storageRef.child('displayName').put(name);
+//var updateEmail = storageRef.child('email').put(updateEmail);
+//var updatePassword = storageRef.child('password').put(updatePassword);
+//var sendPasswordResetEmail = storageRef.child('resetEmail').put(sendPasswordResetEmail);
 
-curl -i \
-  -X OPTIONS \
-  -H 'Origin: http://consumerhost.com' \
-  'https://api.meetup.com/2/member/self?access_token=TOKEN'
-HTTP/1.1 200 OK
-Access-Control-Expose-Headers: X-Meetup-server, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimt-Reset
-Access-Control-Allow-Origin: http://consumerhost.com
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Methods: GET, OPTIONS
-Access-Control-Max-Age: 86400
-
-oauthsecret = goh50dgprulpk2549ph8pvrnps;
-
-oauthkey = koc9lto3p0h64enr7hjm59hr09;
+//
+//push({ (this is done if the user is not already there)
+//    displayName: name,
+//    Email: email
+//
+//})
 
 
 
-var queryURL = "https://api.meetup.com/find/groups?photo-host=public&location=Orlando%2C+FL&page=20&text=pets&sig_id=205737583&category=26&sig=7b2b0507a806d0cde91e74f6c7c25969bf44625c?callback=?";
-
-$.ajax({url: queryURL, method: 'GET', dataType: "jsonp"})
-		.done(function(response) {
-		    var meetUrl = response;
-            var meetBox = $("<div>");
-            meetBox.attr('src', meetUrl);
-            meetBox.attr('alt', 'meet div');
-            $('#list').prepend(meetBox);
-		})
 
 
-//			var meetUrl = response;
-//			var meetBox = $("<div>");
-//			meetBox.attr('src', meetUrl);
-//            meetBox.attr('alt', 'meet div');
-//              $('#list').prepend(meetBox);
 
 
